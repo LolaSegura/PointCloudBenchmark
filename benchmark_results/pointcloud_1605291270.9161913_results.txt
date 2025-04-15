@@ -1,0 +1,50 @@
+Best matching parameters:
+PCL Euclidean Cluster Tolerance: 0.02
+Open3D DBSCAN Epsilon: 0.1
+Minimum Cluster Size: 100
+Resulting clusters - PCL: 2, Open3D: 2, Difference: 0
+
+=== Point Cloud Processing Benchmark ===
+Input file: ./pointcloud_data/pointcloud_1605291270.9161913.pcd
+Parameters:
+  Voxel leaf size: 0.1
+  PCL cluster tolerance: 0.02
+  Open3D DBSCAN epsilon: 0.1
+  Minimum cluster size: 100
+  Maximum cluster size (PCL): 25000
+
+Running PCL voxelization (leaf size = 0.1)...
+Loaded PCL cloud with 7215 points.
+  Time: 197 us
+  CPU Time: 0.208 ms
+  CPU Utilization: 105.584% (208us CPU / 197us wall)
+  Memory: 0 KB
+  Output points: 825
+
+Running Open3D voxelization (voxel size = 0.1)...
+Loaded Open3D cloud with 7215 points.
+  Time: 241 us
+  CPU Time: 0.249 ms
+  CPU Utilization: 103.32% (249us CPU / 241us wall)
+  Memory: 0 KB
+  Output points: 868
+
+Running PCL clustering (tolerance = 0.02)...
+  Time: 585036 us
+  CPU Time: 585.055 ms
+  CPU Utilization: 100.003% (585055us CPU / 585036us wall)
+  Memory: 0 KB
+  Clusters found: 2
+
+Running Open3D clustering (eps = 0.1)...
+  Time: 133580 us
+  CPU Time: 476.621 ms
+  CPU Utilization: 356.806% (476621us CPU / 133580us wall)
+  Memory: 0 KB
+  Clusters found: 2
+
+=== Summary ===
+Voxelization speed ratio (PCL/Open3D): 0.817427
+Voxelization CPU utilization - PCL: 105.584%, Open3D: 103.32%
+Clustering speed ratio (PCL/Open3D): 4.37967
+Clustering CPU utilization - PCL: 100.003%, Open3D: 356.806%

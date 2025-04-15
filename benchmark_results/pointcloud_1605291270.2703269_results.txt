@@ -1,106 +1,50 @@
+Best matching parameters:
+PCL Euclidean Cluster Tolerance: 0.02
+Open3D DBSCAN Epsilon: 0.1
+Minimum Cluster Size: 100
+Resulting clusters - PCL: 2, Open3D: 2, Difference: 0
+
 === Point Cloud Processing Benchmark ===
-Input file: ./data/pointcloud_1605291270.2703269.pcd
+Input file: ./pointcloud_data/pointcloud_1605291270.2703269.pcd
+Parameters:
+  Voxel leaf size: 0.1
+  PCL cluster tolerance: 0.02
+  Open3D DBSCAN epsilon: 0.1
+  Minimum cluster size: 100
+  Maximum cluster size (PCL): 25000
 
 Running PCL voxelization (leaf size = 0.1)...
 Loaded PCL cloud with 7166 points.
-  Time: 0 ms
+  Time: 195 us
+  CPU Time: 0.206 ms
+  CPU Utilization: 105.641% (206us CPU / 195us wall)
   Memory: 0 KB
   Output points: 845
 
 Running Open3D voxelization (voxel size = 0.1)...
 Loaded Open3D cloud with 7166 points.
-  Time: 0 ms
+  Time: 221 us
+  CPU Time: 0.23 ms
+  CPU Utilization: 104.072% (230us CPU / 221us wall)
   Memory: 0 KB
   Output points: 848
 
 Running PCL clustering (tolerance = 0.02)...
-  Time: 819 ms
-  Memory: 388 KB
+  Time: 612242 us
+  CPU Time: 612.151 ms
+  CPU Utilization: 99.9851% (612151us CPU / 612242us wall)
+  Memory: 0 KB
   Clusters found: 2
 
-Running Open3D clustering (eps = 0.3)...
-Precompute neighbors.[=>                                      ] 2%
-Precompute neighbors.[==>                                     ] 5%
-Precompute neighbors.[===>                                    ] 7%
-Precompute neighbors.[====>                                   ] 10%
-Precompute neighbors.[=====>                                  ] 12%
-Precompute neighbors.[======>                                 ] 15%
-Precompute neighbors.[=======>                                ] 17%
-Precompute neighbors.[========>                               ] 20%
-Precompute neighbors.[=========>                              ] 22%
-Precompute neighbors.[==========>                             ] 25%
-Precompute neighbors.[===========>                            ] 27%
-Precompute neighbors.[============>                           ] 30%
-Precompute neighbors.[=============>                          ] 32%
-Precompute neighbors.[==============>                         ] 35%
-Precompute neighbors.[===============>                        ] 37%
-Precompute neighbors.[================>                       ] 40%
-Precompute neighbors.[=================>                      ] 42%
-Precompute neighbors.[==================>                     ] 45%
-Precompute neighbors.[===================>                    ] 47%
-Precompute neighbors.[====================>                   ] 50%
-Precompute neighbors.[=====================>                  ] 52%
-Precompute neighbors.[======================>                 ] 55%
-Precompute neighbors.[=======================>                ] 57%
-Precompute neighbors.[========================>               ] 60%
-Precompute neighbors.[=========================>              ] 62%
-Precompute neighbors.[==========================>             ] 65%
-Precompute neighbors.[===========================>            ] 67%
-Precompute neighbors.[============================>           ] 70%
-Precompute neighbors.[=============================>          ] 72%
-Precompute neighbors.[==============================>         ] 75%
-Precompute neighbors.[===============================>        ] 77%
-Precompute neighbors.[================================>       ] 80%
-Precompute neighbors.[=================================>      ] 82%
-Precompute neighbors.[==================================>     ] 85%
-Precompute neighbors.[===================================>    ] 87%
-Precompute neighbors.[====================================>   ] 90%
-Precompute neighbors.[=====================================>  ] 92%
-Precompute neighbors.[======================================> ] 95%
-Precompute neighbors.[=======================================>] 97%
-Precompute neighbors.[========================================] 100%
-Clustering[=>                                      ] 2%
-Clustering[==>                                     ] 5%
-Clustering[===>                                    ] 7%
-Clustering[====>                                   ] 10%
-Clustering[=====>                                  ] 12%
-Clustering[======>                                 ] 15%
-Clustering[=======>                                ] 17%
-Clustering[========>                               ] 20%
-Clustering[=========>                              ] 22%
-Clustering[==========>                             ] 25%
-Clustering[===========>                            ] 27%
-Clustering[============>                           ] 30%
-Clustering[=============>                          ] 32%
-Clustering[==============>                         ] 35%
-Clustering[===============>                        ] 37%
-Clustering[================>                       ] 40%
-Clustering[=================>                      ] 42%
-Clustering[==================>                     ] 45%
-Clustering[===================>                    ] 47%
-Clustering[====================>                   ] 50%
-Clustering[=====================>                  ] 52%
-Clustering[======================>                 ] 55%
-Clustering[=======================>                ] 57%
-Clustering[========================>               ] 60%
-Clustering[=========================>              ] 62%
-Clustering[==========================>             ] 65%
-Clustering[===========================>            ] 67%
-Clustering[============================>           ] 70%
-Clustering[=============================>          ] 72%
-Clustering[==============================>         ] 75%
-Clustering[===============================>        ] 77%
-Clustering[================================>       ] 80%
-Clustering[=================================>      ] 82%
-Clustering[==================================>     ] 85%
-Clustering[===================================>    ] 87%
-Clustering[====================================>   ] 90%
-Clustering[=====================================>  ] 92%
-Clustering[======================================> ] 95%
-Clustering[=======================================>] 97%
-  Time: 150 ms
-  Memory: 530688 KB
-  Clusters found: 8
+Running Open3D clustering (eps = 0.1)...
+  Time: 133829 us
+  CPU Time: 465.177 ms
+  CPU Utilization: 347.591% (465177us CPU / 133829us wall)
+  Memory: 2376 KB
+  Clusters found: 2
 
 === Summary ===
-Clustering speed ratio (PCL/Open3D): 5.46
+Voxelization speed ratio (PCL/Open3D): 0.882353
+Voxelization CPU utilization - PCL: 105.641%, Open3D: 104.072%
+Clustering speed ratio (PCL/Open3D): 4.57481
+Clustering CPU utilization - PCL: 99.9851%, Open3D: 347.591%
