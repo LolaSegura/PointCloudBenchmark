@@ -1,0 +1,54 @@
+
+=== Finding PCL leaf size to match Open3D voxel size 0.1 ===
+Open3D voxel size 0.1 produces 861 points.
+Testing PCL leaf size: 0.05 -> PCL points: 1691, Diff: 830
+Testing PCL leaf size: 0.075 -> PCL points: 1146, Diff: 285
+Testing PCL leaf size: 0.09 -> PCL points: 968, Diff: 107
+Testing PCL leaf size: 0.1 -> PCL points: 849, Diff: 12
+Testing PCL leaf size: 0.11 -> PCL points: 780, Diff: 81
+Testing PCL leaf size: 0.125 -> PCL points: 656, Diff: 205
+Testing PCL leaf size: 0.15 -> PCL points: 538, Diff: 323
+
+Best matching PCL leaf size: 0.1
+Resulting point counts - PCL: 849, Open3D: 861, Difference: 12
+
+=== Finding PCL clustering params to match Open3D epsilon 0.3, min size 25 ===
+Open3D clustering with epsilon 0.3, min size 25 produces 6 clusters.
+Testing PCL tolerance: 0.09 -> PCL clusters: 8, Diff: 2
+Testing PCL tolerance: 0.12 -> PCL clusters: 8, Diff: 2
+Testing PCL tolerance: 0.15 -> PCL clusters: 8, Diff: 2
+Testing PCL tolerance: 0.18 -> PCL clusters: 7, Diff: 1
+Testing PCL tolerance: 0.21 -> PCL clusters: 6, Diff: 0
+Testing PCL tolerance: 0.24 -> PCL clusters: 5, Diff: 1
+
+Best matching PCL cluster tolerance: 0.21
+Resulting clusters - PCL: 6, Open3D: 6, Difference: 0
+
+=== Point Cloud Processing Benchmark ===
+Input file: pointcloud_data/pointcloud_1605291270.5639296.pcd
+Parameters:
+  Voxel leaf size: 0.1
+  PCL cluster tolerance: 0.21
+  Open3D DBSCAN epsilon: 0.3
+  Minimum cluster size: 25
+  Maximum cluster size (PCL): 25000
+
+Running PCL voxelization and clustering
+Loaded PCL cloud with 7290 points.
+  Time: 1364 us
+  CPU Time: 1.375 ms
+  CPU Utilization: 100.806% (1375us CPU / 1364us wall)
+  Memory: 0 KB
+  Output points: 849
+
+Running Open3D voxelization and clustering
+Loaded Open3D cloud with 7290 points.
+  Time: 1378 us
+  CPU Time: 3.894 ms
+  CPU Utilization: 282.583% (3894us CPU / 1378us wall)
+  Memory: 0 KB
+  Output points: 861
+
+=== Summary ===
+Speed ratio (PCL/Open3D): 0.98984
+CPU utilization - PCL: 100.806%, Open3D: 282.583%
